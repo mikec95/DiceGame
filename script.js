@@ -20,7 +20,7 @@ let playing = true;
 // Create array to house images of dice.
 let diceImages = [];
 for (let i = 0; i <= 6; i++) {
-  diceImages.push(`dice-${i}.png`);
+  diceImages.push(`images/dice-${i}.png`);
 }
 
 const switchPlayer = function () {
