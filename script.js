@@ -37,6 +37,9 @@ const switchPlayer = function () {
  * Button Handlers
  */
 rollBtn.addEventListener('click', function () {
+  // Show dice image
+  diceElement.classList.remove('hidden');
+
   if (playing) {
     // Generate random dice roll (1-6)
     const diceRoll = Math.floor(Math.random() * 6) + 1;
@@ -66,13 +69,16 @@ holdBtn.addEventListener('click', function () {
 
     // Check score is >= 100 ? finish game : switch players
     // Check score is >= 100 ? finish game : switch players
-    if (totalScores[activePlayer] >= 100) {
+    if (totalScores[activePlayer] >= 10) {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
+
+      //hide dice after win
+      diceElement.classList.add('hidden');
       playing = false;
     } else {
       switchPlayer();
